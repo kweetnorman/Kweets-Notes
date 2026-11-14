@@ -609,6 +609,40 @@
   }
 
 
+
+  /* A soft little flock keeps the mission in view without competing with it */
+  .north-star { min-height: 285px; }
+  .mission-flock {
+    position: absolute;
+    z-index: 0;
+    right: 2.2%;
+    bottom: -4%;
+    width: 38%;
+    height: 92%;
+    pointer-events: none;
+    opacity: .32;
+  }
+  .mission-flock img {
+    position: absolute;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 7px 10px rgba(70, 91, 67, .12));
+  }
+  .mission-flock .flock-aura { width: 25%; height: 57%; right: 3%; top: 7%; transform: rotate(8deg); }
+  .mission-flock .flock-cove { width: 26%; height: 61%; right: 25%; top: 1%; transform: rotate(-5deg); }
+  .mission-flock .flock-drift { width: 23%; height: 52%; right: 47%; top: 13%; transform: rotate(6deg); }
+  .mission-flock .flock-echo { width: 25%; height: 58%; right: 67%; top: 4%; transform: rotate(-7deg); }
+  .mission-flock .flock-sable { width: 23%; height: 52%; right: 15%; bottom: 0; transform: rotate(-4deg); }
+  .mission-flock .flock-twig { width: 21%; height: 47%; right: 43%; bottom: -1%; transform: rotate(8deg); }
+  .north-star > :not(.mission-flock) { position: relative; z-index: 1; }
+  .north-star h2, .north-star-copy { max-width: 68%; }
+  @media (max-width: 760px) {
+    .north-star { min-height: 0; padding-bottom: 155px; }
+    .north-star h2, .north-star-copy { max-width: 100%; }
+    .mission-flock { width: 75%; height: 145px; right: 2%; bottom: -4%; opacity: .25; }
+    .north-star::after { z-index: 0; }
+  }
+
 </style>
 
 <script>
@@ -1140,6 +1174,14 @@ window.onload = () => {
 </header>
 
   <section class="north-star" aria-labelledby="north-star-title">
+    <div class="mission-flock" aria-hidden="true">
+      <img class="flock-aura" src="https://raw.githubusercontent.com/kweetnorman/VentPals/main/assets/profile-portraits/aura.png" alt="">
+      <img class="flock-cove" src="https://raw.githubusercontent.com/kweetnorman/VentPals/main/assets/profile-portraits/cove.png" alt="">
+      <img class="flock-drift" src="https://raw.githubusercontent.com/kweetnorman/VentPals/main/assets/profile-portraits/drift.png" alt="">
+      <img class="flock-echo" src="https://raw.githubusercontent.com/kweetnorman/VentPals/main/assets/profile-portraits/echo.png" alt="">
+      <img class="flock-sable" src="https://raw.githubusercontent.com/kweetnorman/VentPals/main/assets/profile-portraits/sable.png" alt="">
+      <img class="flock-twig" src="https://raw.githubusercontent.com/kweetnorman/VentPals/main/assets/profile-portraits/twig.png" alt="">
+    </div>
     <div class="north-star-kicker">✦ The bigger picture · Your north star</div>
     <h2 id="north-star-title">You're building a world where every child can understand their feelings, find their voice, and feel less alone.</h2>
     <p class="north-star-copy">VentPals is more than an app. It's a whole little universe of emotional learning, trusted connection, stories, and characters that help big feelings make sense. Every note, decision, sketch, fix, and tiny step is part of bringing that world to life.</p>
