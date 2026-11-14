@@ -610,36 +610,62 @@
 
 
 
-  /* A soft little flock keeps the mission in view without competing with it */
+  /* A quiet vertical trail of flock artwork in the open space */
   .north-star { min-height: 285px; }
   .mission-flock {
     position: absolute;
     z-index: 0;
-    right: 2.2%;
-    bottom: -4%;
-    width: 38%;
-    height: 92%;
+    top: 8%;
+    right: 3%;
+    bottom: 8%;
+    width: 23%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     pointer-events: none;
-    opacity: .32;
+    opacity: .22;
   }
   .mission-flock img {
-    position: absolute;
+    position: static;
     display: block;
+    width: 42%;
+    height: 15%;
+    min-height: 30px;
     object-fit: contain;
-    filter: drop-shadow(0 7px 10px rgba(70, 91, 67, .12));
+    filter: drop-shadow(0 4px 7px rgba(70, 91, 67, .08));
   }
-  .mission-flock .flock-aura { width: 25%; height: 57%; right: 3%; top: 7%; transform: rotate(8deg); }
-  .mission-flock .flock-cove { width: 26%; height: 61%; right: 25%; top: 1%; transform: rotate(-5deg); }
-  .mission-flock .flock-drift { width: 23%; height: 52%; right: 47%; top: 13%; transform: rotate(6deg); }
-  .mission-flock .flock-echo { width: 25%; height: 58%; right: 67%; top: 4%; transform: rotate(-7deg); }
-  .mission-flock .flock-sable { width: 23%; height: 52%; right: 15%; bottom: 0; transform: rotate(-4deg); }
-  .mission-flock .flock-twig { width: 21%; height: 47%; right: 43%; bottom: -1%; transform: rotate(8deg); }
+  .mission-flock img:nth-child(even) {
+    transform: translateX(22px);
+  }
+  .mission-flock img:nth-child(odd) {
+    transform: translateX(-12px);
+  }
   .north-star > :not(.mission-flock) { position: relative; z-index: 1; }
-  .north-star h2, .north-star-copy { max-width: 68%; }
+  .north-star h2, .north-star-copy { max-width: 72%; }
   @media (max-width: 760px) {
-    .north-star { min-height: 0; padding-bottom: 155px; }
+    .north-star { min-height: 0; padding-bottom: 20px; }
     .north-star h2, .north-star-copy { max-width: 100%; }
-    .mission-flock { width: 75%; height: 145px; right: 2%; bottom: -4%; opacity: .25; }
+    .mission-flock {
+      position: relative;
+      top: auto;
+      right: auto;
+      bottom: auto;
+      width: 100%;
+      height: 48px;
+      margin: 12px auto 0;
+      flex-direction: row;
+      justify-content: center;
+      gap: 8px;
+      opacity: .2;
+    }
+    .mission-flock img {
+      width: 11%;
+      height: 42px;
+      min-height: 0;
+    }
+    .mission-flock img:nth-child(even),
+    .mission-flock img:nth-child(odd) { transform: none; }
     .north-star::after { z-index: 0; }
   }
 
