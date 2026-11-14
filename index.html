@@ -517,6 +517,98 @@
     .brand-bottom-note { font-size: .75rem; }
   }
 
+
+  /* The bigger picture — a visible daily mission reminder */
+  .north-star {
+    width: min(1320px, calc(100% - 32px));
+    margin: 26px auto 0;
+    padding: clamp(20px, 3vw, 34px);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #e5e8d7;
+    border-radius: 28px;
+    background:
+      radial-gradient(circle at 100% 0%, rgba(239, 216, 233, .72), transparent 19rem),
+      radial-gradient(circle at 0% 100%, rgba(218, 239, 207, .8), transparent 22rem),
+      linear-gradient(120deg, #fffdf5, #f8fbf1 55%, #fff8fb);
+    box-shadow: 0 16px 40px rgba(75, 103, 75, .10);
+  }
+  .north-star::after {
+    content: "✦";
+    position: absolute;
+    right: 26px;
+    top: 8px;
+    color: rgba(194, 151, 89, .38);
+    font-size: 5rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .north-star-kicker {
+    color: #9b789d;
+    font-size: .7rem;
+    font-weight: 900;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+  }
+  .north-star h2 {
+    max-width: 900px;
+    margin: 9px 0 10px;
+    color: #355c43;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(1.55rem, 3.2vw, 2.55rem);
+    line-height: 1.12;
+    letter-spacing: -.04em;
+  }
+  .north-star-copy {
+    max-width: 850px;
+    margin: 0;
+    color: #687967;
+    font-size: clamp(.9rem, 1.4vw, 1.03rem);
+    line-height: 1.65;
+  }
+  .north-star-pillars {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+    margin-top: 19px;
+  }
+  .north-star-pillars span {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 8px 13px;
+    color: #587451;
+    font-size: .78rem;
+    font-weight: 800;
+    border: 1px solid #e1ead9;
+    border-radius: 999px;
+    background: rgba(255,255,255,.78);
+  }
+  .north-star-footer {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+    padding-top: 15px;
+    color: #a07791;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: .95rem;
+    font-style: italic;
+    border-top: 1px solid rgba(155, 177, 145, .25);
+  }
+  .north-star-footer strong {
+    color: #62865d;
+    font-family: inherit;
+    font-style: normal;
+  }
+  @media (max-width: 760px) {
+    .north-star { width: calc(100% - 24px); margin-top: 15px; border-radius: 22px; }
+    .north-star::after { right: 12px; top: 10px; font-size: 3.4rem; }
+    .north-star-pillars span { font-size: .73rem; }
+  }
+
+
 </style>
 
 <script>
@@ -1046,6 +1138,19 @@ window.onload = () => {
   </div>
   <div class="brand-bottom-note"><span>✿</span> Keep your notes. Keep your magic. <span>✿</span></div>
 </header>
+
+  <section class="north-star" aria-labelledby="north-star-title">
+    <div class="north-star-kicker">✦ The bigger picture · Your north star</div>
+    <h2 id="north-star-title">You're building a world where every child can understand their feelings, find their voice, and feel less alone.</h2>
+    <p class="north-star-copy">VentPals is more than an app. It's a whole little universe of emotional learning, trusted connection, stories, and characters that help big feelings make sense. Every note, decision, sketch, fix, and tiny step is part of bringing that world to life.</p>
+    <div class="north-star-pillars" aria-label="The vision you're building">
+      <span>🐦 VentPals · The mission</span>
+      <span>🌿 Mimbleton · The world</span>
+      <span>🎬 The show · The stories</span>
+      <span>💛 Learning · The impact</span>
+    </div>
+    <div class="north-star-footer">A reminder for the days when the to-do list gets loud: <strong>this is bigger than a to-do list.</strong></div>
+  </section>
 
   <div class="main-container">
     <div class="table-container">
